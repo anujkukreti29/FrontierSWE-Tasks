@@ -1,0 +1,36 @@
+schema_version = "1.4"
+artifacts = ["/app/cartographer"]
+
+[task]
+name = "local/causal-restore-cartographer"
+version = "1.0.0"
+description = "Reconstruct a globally optimal consistent recovery from divergent offline replica histories."
+keywords = ["distributed-systems", "replica-recovery", "causal-consistency", "wal", "crash-safety"]
+
+[metadata]
+difficulty = "hard"
+category = "programming"
+tags = ["long-horizon-software-engineering", "storage", "recovery", "systems"]
+
+[agent]
+timeout_sec = 72000.0
+
+[verifier]
+timeout_sec = 1200.0
+environment_mode = "separate"
+
+[verifier.environment]
+network_mode = "no-network"
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 12288
+gpus = 0
+
+[environment]
+network_mode = "no-network"
+build_timeout_sec = 1200.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 12288
+gpus = 0

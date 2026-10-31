@@ -1,0 +1,33 @@
+schema_version = "1.4"
+artifacts = ["/app/permitgate"]
+
+[task]
+name = "research/offline-authority-continuity"
+version = "1"
+description = "Implement delegated offline authorization with authenticated history compaction"
+
+[metadata]
+difficulty = "hard"
+category = "cybersecurity"
+subcategory = "identity-and-access-management"
+tags = ["authorization", "durability", "signatures", "revocation", "delegation-graphs", "offline-recovery", "signed-checkpoints"]
+
+[agent]
+timeout_sec = 72000.0
+
+[verifier]
+timeout_sec = 3600.0
+environment_mode = "separate"
+
+[verifier.environment]
+network_mode = "no-network"
+cpus = 4
+memory_mb = 8192
+storage_mb = 8192
+
+[environment]
+network_mode = "no-network"
+cpus = 4
+memory_mb = 8192
+storage_mb = 16384
+build_timeout_sec = 1200.0

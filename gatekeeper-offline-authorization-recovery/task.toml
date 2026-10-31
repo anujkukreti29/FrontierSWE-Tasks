@@ -1,0 +1,29 @@
+schema_version = "1.4"
+artifacts = ["/workspace/gatekeeper"]
+
+[task]
+name = "local/gatekeeper-offline-authorization-recovery"
+version = "1.0.0"
+description = "Offline credential delegation, causally verified authority updates, and crash-consistent authorization effects."
+keywords = ["security", "identity", "ed25519", "distributed-state", "sqlite", "recovery"]
+
+[metadata]
+category = "cybersecurity"
+difficulty = "hard"
+tags = ["authorization", "revocation", "offline", "linearizability", "long-horizon"]
+
+[agent]
+timeout_sec = 72000.0
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[environment]
+cpus = 4
+memory_mb = 8192
+storage_mb = 16384
+network_mode = "no-network"
+
+[verifier.environment]
+network_mode = "no-network"
